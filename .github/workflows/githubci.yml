@@ -9,6 +9,11 @@ on:
   pull_request:
     branches: [ "master" ]
 
+env:
+  BROWSERSTACK_APP_ID: "bs://986dea48b2e450e58634a3ff5c574df958e04e03"
+  BROWSERSTACK_USERNAME: "${{secrets.BROWSERSTACK_USERNAME}}"
+  BROWSERSTACK_ACCESS_KEY: "${{secrets.BROWSERSTACK_ACCESS_KEY}}"
+  
 jobs:
   build:
 
@@ -26,6 +31,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: cd android
+    - run: npm i
+    - run: npm first
