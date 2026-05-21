@@ -1,5 +1,6 @@
 var assert = require('assert');
 
+//CI/CD INTEGRATION
 describe('Search Wikipedia Functionality', () => {
   it('can find search results', async () => {
     var searchSelector = await $(`~Search Wikipedia`);
